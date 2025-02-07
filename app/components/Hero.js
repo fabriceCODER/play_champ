@@ -18,7 +18,7 @@ export default function Hero() {
                 {/* Image Content */}
                 <div className="mt-10 lg:mt-0 lg:w-1/2">
                     <img
-                        src="/controller.png"
+                        src="/images/controller.png"
                         alt="Gaming Controller"
                         className="w-full max-w-md mx-auto lg:mx-0"
                     />
