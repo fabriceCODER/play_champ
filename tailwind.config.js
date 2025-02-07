@@ -16,6 +16,10 @@ module.exports = {
       boxShadow: {
         hover: "0px 4px 15px rgba(0, 0, 0, 0.2)",
       },
+      fontFamily: {
+        sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-geist-mono)"],
+      },
     },
   },
   plugins: [],

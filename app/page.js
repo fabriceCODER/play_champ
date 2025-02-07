@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import TrendingGames from "./components/TrendingGames";
 import LearnMoreSection from "@/app/components/LearnMore";
 import FeaturedProjects from "@/app/components/FeaturedProjects";
+import Footer from "@/app/components/Footer";
 
 export default function Home() {
     return (
@@ -36,11 +37,7 @@ export default function Home() {
             </main>
 
             {/* Footer */}
-            <footer className="bg-gray-100 dark:bg-gray-800 text-center py-4 mt-10">
-                <p className="text-gray-600 dark:text-gray-400">
-                    © {new Date().getFullYear()} Play-to-Earn Games. All rights reserved.
-                </p>
-            </footer>
+            <Footer />
         </div>
     );
 }
