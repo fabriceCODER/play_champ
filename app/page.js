@@ -3,9 +3,9 @@ import ThemeToggle from "./components/ThemeToggle";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import TrendingGames from "./components/TrendingGames";
-import LearnMoreSection from "@/app/components/LearnMore";
 import FeaturedProjects from "@/app/components/FeaturedProjects";
 import Footer from "@/app/components/Footer";
+import CTA from "@/app/components/CTA";
 
 export default function Home() {
     return (
@@ -33,6 +33,8 @@ export default function Home() {
                 {/* Featured Projects Section */}
                 <FeaturedProjects />
 
+                {/* CTA Section */}
+                <CTA />
 
             </main>
 
