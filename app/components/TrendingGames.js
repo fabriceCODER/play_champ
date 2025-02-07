@@ -1,3 +1,8 @@
+"use client"
+
+import { useState } from "react"; // Import useState
+import LearnMoreSection from "@/app/components/LearnMore";
+
 export default function TrendingGames() {
     const games = [
         {
@@ -25,6 +30,18 @@ export default function TrendingGames() {
             description: "Explore new worlds and earn rewards.",
         },
     ];
+
+    // State to track which game's "Learn More" section is visible
+    const [visibleLearnMoreId, setVisibleLearnMoreId] = useState(null);
+
+    // Function to toggle the visibility of the LearnMoreSection
+    const toggleLearnMore = (gameId) => {
+        if (visibleLearnMoreId === gameId) {
+            setVisibleLearnMoreId(null); // Hide if already visible
+        } else {
+            setVisibleLearnMoreId(gameId); // Show for the clicked game
+        }
+    };
 
     return (
         <section className="bg-white dark:bg-secondary py-20 px-6">
@@ -56,9 +73,19 @@ export default function TrendingGames() {
                                 <p className="mt-2 text-gray-600 dark:text-gray-400">
                                     {game.description}
                                 </p>
-                                <button className="mt-4 bg-primary text-white py-2 px-4 rounded-lg hover:bg-blue-800">
+
+                                {/* Button to toggle LearnMoreSection */}
+                                <button
+                                    onClick={() => toggleLearnMore(game.id)}
+                                    className="mt-4 bg-primary text-white py-2 px-4 rounded-lg hover:bg-blue-800"
+                                >
                                     Learn More
                                 </button>
+
+                                {/* Conditionally render LearnMoreSection */}
+                                {visibleLearnMoreId === game.id && (
+                                    <LearnMoreSection />
+                                )}
                             </div>
                         </div>
                     ))}
