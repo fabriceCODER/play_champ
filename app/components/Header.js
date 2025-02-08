@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import {useState} from "react";
 import Link from "next/link";
 
 export default function Header() {
@@ -25,8 +25,8 @@ export default function Header() {
                     <Link href="/about" className="hover:text-orange-500 transition duration-300">
                         About us
                     </Link>
-                    <Link href="/portfolio" className="hover:text-orange-500 transition duration-300">
-                        Portfolio
+                    <Link href="/pricing" className="hover:text-orange-500 transition duration-300">
+                        Pricing
                     </Link>
                     <Link href="/news" className="hover:text-orange-500 transition duration-300">
                         News

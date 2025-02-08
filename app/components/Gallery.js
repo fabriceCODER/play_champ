@@ -4,12 +4,12 @@ import { useState } from "react";
 
 export default function Gallery() {
     const [images] = useState([
-        { src: "/images/gallery1.jpg", alt: "Game 1" },
-        { src: "/images/gallery2.jpg", alt: "Game 2" },
-        { src: "/images/gallery3.jpg", alt: "Game 3" },
-        { src: "/images/gallery4.jpg", alt: "Game 4" },
-        { src: "/images/gallery5.jpg", alt: "Game 5" },
-        { src: "/images/gallery6.jpg", alt: "Game 6" },
+        { src: "/images/gal1.jpg", alt: "Game 1" },
+        { src: "/images/gal2.jpg", alt: "Game 2" },
+        { src: "/images/gal3.jpg", alt: "Game 3" },
+        { src: "/images/gal4.jpg", alt: "Game 4" },
+        { src: "/images/gal5.jpg", alt: "Game 5" },
+        { src: "/images/gal6.jpg", alt: "Game 6" },
     ]);
 
     return (

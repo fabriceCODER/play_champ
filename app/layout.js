@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
 
     return (
         <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-        <body className={`antialiased ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+        <body className={`antialiasing ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
         {/* Particles Background */}
         <div className="fixed inset-0 z-0">
             <ParticlesBackground />

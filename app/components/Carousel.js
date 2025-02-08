@@ -4,9 +4,13 @@ import { useState } from "react";
 
 export default function Carousel() {
     const items = [
-        { image: "/images/slide1.jpg", alt: "Exciting Game 1" },
-        { image: "/images/slide2.jpg", alt: "Exciting Game 2" },
-        { image: "/images/slide3.jpg", alt: "Exciting Game 3" },
+        { image: "/images/slide1.png", alt: "Exciting Game 1" },
+        { image: "/images/slide2.png", alt: "Exciting Game 2" },
+        { image: "/images/slide3.png", alt: "Exciting Game 3" },
+        { image: "/images/slide4.png", alt: "Exciting Game 2" },
+        { image: "/images/slide5.png", alt: "Exciting Game 3" },
+        { image: "/images/slide0.png", alt: "Exciting Game 2" },
+
     ];
     const [current, setCurrent] = useState(0);
 
