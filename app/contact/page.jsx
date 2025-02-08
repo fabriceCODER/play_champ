@@ -1,5 +1,7 @@
 "use client"
 import { useState } from "react";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -26,6 +28,8 @@ export default function Contact() {
     return (
         <main className="bg-background dark:bg-darkBackground text-primary dark:text-white min-h-screen py-16">
             <div className="container mx-auto px-6">
+                {/* Header Section */}
+                <Header />
                 <h1 className="text-4xl font-bold text-center mb-10">Contact Us</h1>
                 <div className="flex flex-col md:flex-row gap-8">
                     {/* Contact Details */}
@@ -39,7 +43,7 @@ export default function Contact() {
                                 <strong>Email:</strong> contact@playchamp.com
                             </li>
                             <li>
-                                <strong>Phone:</strong> +1 (123) 456-7890
+                                <strong>Phone:</strong> +250 794 500 945
                             </li>
                             <li>
                                 <strong>Address:</strong> 123 PlayChamp Street, Gaming City
@@ -103,6 +107,8 @@ export default function Contact() {
                         </button>
                     </form>
                 </div>
+                {/* Footer Section */}
+                <Footer />
             </div>
         </main>
     );

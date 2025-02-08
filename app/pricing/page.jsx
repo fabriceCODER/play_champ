@@ -1,4 +1,6 @@
 import CTA from "@/app/components/CTA";
+import Footer from "@/app/components/Footer";
+import Header from "@/app/components/Header";
 
 
 export default function Pricing() {
@@ -29,6 +31,9 @@ export default function Pricing() {
     return (
         <main className="bg-background dark:bg-darkBackground text-primary dark:text-white min-h-screen py-16">
             <div className="container mx-auto px-6">
+                {/* Header section */}
+                <Header />
+
                 {/* Page Header */}
                 <section className="text-center mb-12">
                     <h1 className="text-4xl font-bold">Pricing Plans</h1>
@@ -69,6 +74,10 @@ export default function Pricing() {
                 {/* CTA Section */}
                 <section>
                     <CTA />
+                </section>
+                {/* Footer Section */}
+                <section>
+                    <Footer />
                 </section>
             </div>
         </main>

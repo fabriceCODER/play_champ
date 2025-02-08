@@ -1,48 +1,50 @@
-export default function News() {
-    const articles = [
-        {
-            id: 1,
-            title: "The Future of Play-to-Earn Gaming",
-            description: "Discover how blockchain technology is revolutionizing the gaming industry.",
-            image: "/images/news1.jpg",
-            date: "February 7, 2025",
-        },
-        {
-            id: 2,
-            title: "Top 10 Play-to-Earn Games of 2025",
-            description: "Explore the best games in the play-to-earn space this year.",
-            image: "/images/news2.jpg",
-            date: "February 5, 2025",
-        },
-        {
-            id: 3,
-            title: "How to Get Started with Play-to-Earn",
-            description: "A beginner's guide to entering the world of play-to-earn games.",
-            image: "/images/news3.jpg",
-            date: "February 3, 2025",
-        },
-    ];
+"use client";
 
+import NewsGrid from "@/app/components/news/NewsGrid";
+import CTA from "@/app/components/CTA";
+import Footer from "@/app/components/Footer";
+import Header from "@/app/components/Header";
+
+export default function NewsPage() {
     return (
         <main className="bg-background dark:bg-darkBackground text-primary dark:text-white min-h-screen py-16">
             <div className="container mx-auto px-6">
-                <h1 className="text-4xl font-bold text-center mb-10">Latest News</h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {articles.map((article) => (
-                        <div key={article.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-                            <img
-                                src={article.image}
-                                alt={article.title}
-                                className="w-full h-48 object-cover"
-                            />
-                            <div className="p-6">
-                                <h2 className="text-xl font-semibold mb-2">{article.title}</h2>
-                                <p className="text-gray-600 dark:text-gray-400 mb-4">{article.description}</p>
-                                <p className="text-sm text-gray-500">{article.date}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                {/* Header section */}
+                <Header />
+
+                {/* Page Header */}
+                <section className="text-center mb-12">
+                    <h1 className="text-4xl font-bold">Stay Updated with the Latest Gaming News</h1>
+                    <p className="text-gray-600 dark:text-gray-400 mt-4">
+                        Explore the newest updates, releases, and trends in the gaming world.
+                    </p>
+                </section>
+
+                {/* Search Section */}
+                <section className="text-center mb-12">
+                    <div className="mt-6">
+                        <input
+                            type="text"
+                            placeholder="Search Latest News"
+                            className="w-2/3 md:w-1/3 px-4 py-2 rounded-lg text-black"
+                        />
+                    </div>
+                </section>
+
+                {/* News Grid */}
+                <section className="mb-12">
+                    <NewsGrid />
+                </section>
+
+                {/* CTA Section */}
+                <section>
+                    <CTA />
+                </section>
+
+                {/* Footer Section */}
+                <section>
+                    <Footer />
+                </section>
             </div>
         </main>
     );

@@ -1,64 +1,57 @@
+import Link from "next/link";
+
 export default function Footer() {
     return (
         <footer className="bg-gray-900 text-gray-300 py-8">
             <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
                 {/* Logo and Description */}
                 <div>
-                    <h3 className="text-white text-lg font-bold mb-4">LOGO</h3>
+                    <h3 className="text-white text-lg font-bold mb-4">playChamp</h3>
                     <p className="text-sm">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry.
+                        PlayChamp is your ultimate destination for all things gaming. From the latest news and reviews to comprehensive guides and tips, we've got you covered.
                     </p>
-                    <p className="mt-4 text-sm">playChamp</p>
+                    <p className="mt-4 text-sm">Level up your game with PlayChamp!</p>
                 </div>
 
                 {/* Links Section */}
                 <div>
-                    <h4 className="text-white text-lg font-bold mb-4">About us</h4>
+                    <h4 className="text-white text-lg font-bold mb-4">Quick Links</h4>
                     <ul className="space-y-2 text-sm">
                         <li>
-                            <a href="#zeux" className="hover:underline">
-                                Zeux
-                            </a>
+                            <Link href="/news" className="hover:underline">Latest News</Link>
                         </li>
                         <li>
-                            <a href="#portfolio" className="hover:underline">
-                                Portfolio
-                            </a>
+                            <Link href="/reviews" className="hover:underline">Reviews</Link>
                         </li>
                         <li>
-                            <a href="#careers" className="hover:underline">
-                                Careers
-                            </a>
+                            <Link href="/guides" className="hover:underline">Guides</Link>
                         </li>
                         <li>
-                            <a href="#contact" className="hover:underline">
-                                Contact us
-                            </a>
+                            <Link href="/contact" className="hover:underline">Contact Us</Link>
                         </li>
                     </ul>
                 </div>
 
                 {/* Contact Section */}
                 <div>
-                    <h4 className="text-white text-lg font-bold mb-4">Contact us</h4>
+                    <h4 className="text-white text-lg font-bold mb-4">Contact Us</h4>
                     <p className="text-sm">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry.
+                        Have questions or feedback? Reach out to us, and we'll be happy to assist you.
                     </p>
-                    <p className="mt-2 text-sm">+908 88097 880</p>
+                    <p className="mt-2 text-sm">Email: support@playchamp.com</p>
+                    <p className="mt-2 text-sm">Phone: +1 (800) 123-4567</p>
                     {/* Social Media Links */}
                     <div className="flex space-x-4 mt-4">
-                        <a href="#facebook" className="hover:text-white">
+                        <a href="https://facebook.com/playchamp" target="_blank" className="hover:text-white">
                             <i className="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#instagram" className="hover:text-white">
+                        <a href="https://instagram.com/playchamp" target="_blank" className="hover:text-white">
                             <i className="fab fa-instagram"></i>
                         </a>
-                        <a href="#twitter" className="hover:text-white">
+                        <a href="https://twitter.com/playchamp" target="_blank" className="hover:text-white">
                             <i className="fab fa-twitter"></i>
                         </a>
-                        <a href="#linkedin" className="hover:text-white">
+                        <a href="https://linkedin.com/company/playchamp" target="_blank" className="hover:text-white">
                             <i className="fab fa-linkedin-in"></i>
                         </a>
                     </div>
@@ -68,7 +61,7 @@ export default function Footer() {
             {/* Copyright Section */}
             <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm">
                 <p className="text-gray-600 dark:text-gray-400">
-                    © {new Date().getFullYear()} playChamp. All rights reserved.
+                    © {new Date().getFullYear()} PlayChamp. All rights reserved.
                 </p>
             </div>
         </footer>
