@@ -4,6 +4,7 @@ import ContactForm from "../components/ContactForm";
 import Gallery from "@/app/components/Gallery";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
+import CTA from "@/app/components/CTA";
 
 export default function AboutUs() {
     return (
@@ -12,7 +13,7 @@ export default function AboutUs() {
             <Carousel />
             <CardSection />
             <Gallery />
-            <ContactForm />
+            <CTA />
             <Footer />
         </div>
     );
