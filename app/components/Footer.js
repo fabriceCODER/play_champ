@@ -1,69 +1,130 @@
-import Link from "next/link";
+"use client";
 
-export default function Footer() {
+import { useState } from "react";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
+
+export default function Contact() {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+    };
+
     return (
-        <footer className="bg-gray-900 text-gray-300 py-8">
-            <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
-                {/* Logo and Description */}
-                <div>
-                    <h3 className="text-white text-lg font-bold mb-4">playChamp</h3>
-                    <p className="text-sm">
-                        PlayChamp is your ultimate destination for all things gaming. From the latest news and reviews to comprehensive guides and tips, we've got you covered.
-                    </p>
-                    <p className="mt-4 text-sm">Level up your game with PlayChamp!</p>
-                </div>
+        <main className="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+            <Header />
 
-                {/* Links Section */}
-                <div>
-                    <h4 className="text-white text-lg font-bold mb-4">Quick Links</h4>
-                    <ul className="space-y-2 text-sm">
-                        <li>
-                            <Link href="/news" className="hover:underline">Latest News</Link>
-                        </li>
-                        <li>
-                            <Link href="/reviews" className="hover:underline">Reviews</Link>
-                        </li>
-                        <li>
-                            <Link href="/guide" className="hover:underline">Guides</Link>
-                        </li>
-                        <li>
-                            <Link href="/contact" className="hover:underline">Contact Us</Link>
-                        </li>
-                    </ul>
-                </div>
+            {/* Page Title */}
+            <section className="py-16 text-center">
+                <h1 className="text-4xl font-bold">Contact Us</h1>
+                <p className="text-gray-700 dark:text-gray-300 mt-2">
+                    Reach out to us for inquiries, feedback, or support.
+                </p>
+            </section>
 
-                {/* Contact Section */}
-                <div>
-                    <h4 className="text-white text-lg font-bold mb-4">Contact Us</h4>
-                    <p className="text-sm">
-                        Have questions or feedback? Reach out to us, and we'll be happy to assist you.
+            {/* Contact Section */}
+            <section className="container mx-auto px-6 grid md:grid-cols-2 gap-12 pb-16">
+                {/* Contact Info */}
+                <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                    <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
+                    <p className="text-gray-700 dark:text-gray-300 mb-6">
+                        We’d love to hear from you! Feel free to contact us anytime.
                     </p>
-                    <p className="mt-2 text-sm">Email: support@playchamp.com</p>
-                    <p className="mt-2 text-sm">Phone: +1 (800) 123-4567</p>
-                    {/* Social Media Links */}
-                    <div className="flex space-x-4 mt-4">
-                        <a href="https://facebook.com/playchamp" target="_blank" className="hover:text-white">
-                            <i className="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://instagram.com/playchamp" target="_blank" className="hover:text-white">
-                            <i className="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://twitter.com/playchamp" target="_blank" className="hover:text-white">
-                            <i className="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://linkedin.com/company/playchamp" target="_blank" className="hover:text-white">
-                            <i className="fab fa-linkedin-in"></i>
-                        </a>
+                    <div className="space-y-4">
+                        <div className="flex items-center space-x-3">
+                            <FaEnvelope className="text-blue-500 text-lg" />
+                            <span className="text-gray-900 dark:text-gray-100">
+                                contact@playchamp.com
+                            </span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                            <FaPhone className="text-blue-500 text-lg" />
+                            <span className="text-gray-900 dark:text-gray-100">+250 794 500 945</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                            <FaMapMarkerAlt className="text-blue-500 text-lg" />
+                            <span className="text-gray-900 dark:text-gray-100">
+                                123 PlayChamp Street, Gaming City
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Copyright Section */}
-            <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm">
-                <p className="text-gray-600 dark:text-gray-400">
-                    © {new Date().getFullYear()} PlayChamp. All rights reserved.
-                </p>
-            </div>
-        </footer>
+                {/* Contact Form */}
+                <form
+                    onSubmit={handleSubmit}
+                    className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
+                >
+                    <h2 className="text-2xl font-semibold mb-4">Send a Message</h2>
+                    <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-800 dark:text-gray-200" htmlFor="name">
+                            Name
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-800 dark:text-gray-200" htmlFor="email">
+                            Email
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-800 dark:text-gray-200" htmlFor="message">
+                            Message
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleInputChange}
+                            required
+                            rows="4"
+                            className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        ></textarea>
+                    </div>
+                    <button
+                        type="submit"
+                        className="bg-blue-600 text-white flex items-center justify-center py-2 px-4 rounded-lg hover:bg-blue-700 w-full"
+                    >
+                        <FaPaperPlane className="mr-2" />
+                        Send Message
+                    </button>
+                </form>
+            </section>
+
+            <Footer />
+        </main>
     );
 }
