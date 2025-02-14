@@ -9,7 +9,7 @@ export default function TrendingGames() {
             id: 1,
             image: "/images/game1.png",
             title: "Call of Duty: Black Ops 6",
-            description: "A revolutionary play-to-earn game.",
+            description: "A revolutionary play-to-earn games.",
         },
         {
             id: 2,

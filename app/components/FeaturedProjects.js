@@ -22,7 +22,7 @@ export default function FeaturedProjects() {
             title: "Mystic Valley",
             img: "/images/project4.png",
             description:
-                "Explore a magical world filled with puzzles, treasures, and mystical creatures in this enchanting adventure game.",
+                "Explore a magical world filled with puzzles, treasures, and mystical creatures in this enchanting adventure games.",
         },
         {
             title: "Zombie Apocalypse",
@@ -34,7 +34,7 @@ export default function FeaturedProjects() {
             title: "Racing Legends",
             img: "/images/project6.png",
             description:
-                "Compete in high-speed races, customize your cars, and become the ultimate champion in this adrenaline-pumping racing game.",
+                "Compete in high-speed races, customize your cars, and become the ultimate champion in this adrenaline-pumping racing games.",
         },
     ];
 

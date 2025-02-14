@@ -6,7 +6,7 @@ export default function NewsGrid() {
     const featuredArticle = {
         title: "New Game Release: CyberQuest Takes the World by Storm",
         description:
-            "CyberQuest, the highly anticipated open-world RPG, has finally been released. Dive into a futuristic world filled with action, exploration, and stunning visuals. Read more about what makes this game a must-play!",
+            "CyberQuest, the highly anticipated open-world RPG, has finally been released. Dive into a futuristic world filled with action, exploration, and stunning visuals. Read more about what makes this games a must-play!",
         author: "Jane Doe",
         time: "5",
         image: "/images/slide5.png",
