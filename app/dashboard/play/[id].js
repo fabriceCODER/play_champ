@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useGames } from "@/hooks/useGames";
-import DashboardLayout from "../DashboardLayout";
+import DashboardLayout from "../../layouts/DashboardLayout";
 import { useState } from "react";
 
 const GamePlayground = () => {

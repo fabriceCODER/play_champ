@@ -1,4 +1,4 @@
-"use client"; // Mark as Client Component
+"use client";
 
 import { useEffect, useState } from "react";
 import { GeistSans, GeistMono } from "geist/font";
