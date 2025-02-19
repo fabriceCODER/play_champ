@@ -1,7 +1,9 @@
-"use client"
-import Header from "@/app/components/Header";
+"use client";
 
-export default function ErrorPage() {
+
+import Header from "./components/Header";
+
+const ErrorPage: React.FC = () => {
     return (
         <main className="bg-background dark:bg-darkBackground text-primary dark:text-white min-h-screen py-16">
             <div className="container mx-auto px-6">
@@ -21,4 +23,6 @@ export default function ErrorPage() {
             </div>
         </main>
     );
-}
+};
+
+export default ErrorPage;

@@ -4,9 +4,10 @@ import ThemeToggle from "./components/ThemeToggle";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import TrendingGames from "./components/TrendingGames";
-import FeaturedProjects from "@/app/components/FeaturedProjects";
-import Footer from "@/app/components/Footer";
-import CTA from "@/app/components/CTA";
+import FeaturedProjects from "./components/FeaturedProjects";
+import CTA from "./components/CTA";
+import Footer from "./components/Footer";
+
 
 export default function Home() {
     return (

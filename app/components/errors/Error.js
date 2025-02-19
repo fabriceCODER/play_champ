@@ -1,5 +1,3 @@
-// pages/error.js
-
 import Header from "@/app/components/Header";
 
 export default function ErrorPage() {
