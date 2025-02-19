@@ -1,10 +1,18 @@
-import { useMemo } from "react";
-import CTA from "@/app/components/CTA";
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
+import React, { useMemo } from "react";
+import CTA from "../components/CTA";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+interface PricingPlan {
+    id: number;
+    title: string;
+    description: string;
+    price: string;
+    features: string[];
+}
 
 export default function Pricing() {
-    const pricingPlans = useMemo(() => [
+    const pricingPlans: PricingPlan[] = useMemo(() => [
         {
             id: 1,
             title: "Basic Plan",
@@ -56,7 +64,11 @@ export default function Pricing() {
     );
 }
 
-const PricingCard = ({ plan }) => (
+interface PricingCardProps {
+    plan: PricingPlan;
+}
+
+const PricingCard: React.FC<PricingCardProps> = ({ plan }) => (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden p-6">
         <h3 className="text-xl font-bold">{plan.title}</h3>
         <p className="text-gray-600 dark:text-gray-400 mb-4">{plan.description}</p>

@@ -1,11 +1,12 @@
 "use client";
 
-import NewsGrid from "@/app/components/news/NewsGrid";
-import CTA from "@/app/components/CTA";
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
+import Header from "../components/Header";
+import {JSX} from "react";
+import NewsGrid from "../components/news/NewsGrid";
+import CTA from "../components/CTA";
+import Footer from "../components/Footer";
 
-export default function NewsPage() {
+export default function NewsPage(): JSX.Element {
     return (
         <main className="bg-background dark:bg-darkBackground text-primary dark:text-white min-h-screen py-16">
             <div className="container mx-auto px-6">

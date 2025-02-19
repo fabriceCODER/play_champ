@@ -1,7 +1,12 @@
 import { UserButton, useUser, RedirectToSignIn } from "@clerk/nextjs";
 import Link from "next/link";
+import React, { ReactNode } from "react";
 
-const DashboardLayout = ({ children }) => {
+interface DashboardLayoutProps {
+    children: ReactNode;
+}
+
+const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
     const { isSignedIn, isLoaded } = useUser();
 
     if (!isLoaded) return <p>Loading...</p>;

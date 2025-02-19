@@ -1,9 +1,17 @@
-import CTA from "@/app/components/CTA";
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
+import React from "react";
+import Header from "../components/Header";
+import CTA from "../components/CTA";
+import Footer from "../components/Footer";
+
+interface Review {
+    id: number;
+    name: string;
+    feedback: string;
+    rating: number;
+}
 
 export default function Reviews() {
-    const reviews = [
+    const reviews: Review[] = [
         {
             id: 1,
             name: "John Doe",
@@ -45,23 +53,7 @@ export default function Reviews() {
                     <h2 className="text-2xl font-semibold mb-6 text-center">User Reviews</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {reviews.map((review) => (
-                            <div
-                                key={review.id}
-                                className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden p-6"
-                            >
-                                <h3 className="text-xl font-bold">{review.name}</h3>
-                                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                                    {review.feedback}
-                                </p>
-                                <div className="flex items-center">
-                                    {Array.from({ length: review.rating }).map((_, idx) => (
-                                        <span key={idx} className="text-yellow-400">★</span>
-                                    ))}
-                                    {Array.from({ length: 5 - review.rating }).map((_, idx) => (
-                                        <span key={idx} className="text-gray-400">★</span>
-                                    ))}
-                                </div>
-                            </div>
+                            <ReviewCard key={review.id} review={review} />
                         ))}
                     </div>
                 </section>
@@ -78,3 +70,22 @@ export default function Reviews() {
         </main>
     );
 }
+
+interface ReviewCardProps {
+    review: Review;
+}
+
+const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => (
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden p-6">
+        <h3 className="text-xl font-bold">{review.name}</h3>
+        <p className="text-gray-600 dark:text-gray-400 mb-4">{review.feedback}</p>
+        <div className="flex items-center">
+            {Array.from({ length: review.rating }).map((_, idx) => (
+                <span key={idx} className="text-yellow-400">★</span>
+            ))}
+            {Array.from({ length: 5 - review.rating }).map((_, idx) => (
+                <span key={idx} className="text-gray-400">★</span>
+            ))}
+        </div>
+    </div>
+);

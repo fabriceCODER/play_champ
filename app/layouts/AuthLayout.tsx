@@ -1,6 +1,12 @@
 import Link from "next/link";
+import React, { ReactNode } from "react";
 
-const AuthLayout = ({ title, children }) => {
+interface AuthLayoutProps {
+    title: string;
+    children: ReactNode;
+}
+
+const AuthLayout: React.FC<AuthLayoutProps> = ({ title, children }) => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-500">
             <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-center">
