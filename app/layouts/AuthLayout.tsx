@@ -16,14 +16,14 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ title, children }) => {
                     {title === "Sign In" ? (
                         <p>
                             Don't have an account?{" "}
-                            <Link href="/sign-up" className="text-blue-500 hover:underline">
+                            <Link href="/frontend/app/sign-up" className="text-blue-500 hover:underline">
                                 Sign Up
                             </Link>
                         </p>
                     ) : (
                         <p>
                             Already have an account?{" "}
-                            <Link href="/sign-in" className="text-blue-500 hover:underline">
+                            <Link href="/frontend/app/sign-in" className="text-blue-500 hover:underline">
                                 Sign In
                             </Link>
                         </p>

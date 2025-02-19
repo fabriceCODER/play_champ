@@ -1,5 +1,5 @@
 import { SignUp } from "@clerk/nextjs";
-import AuthLayout from "@/layouts/AuthLayout";
+import AuthLayout from "./layouts/AuthLayout";
 
 const SignUpPage = () => {
     return (
