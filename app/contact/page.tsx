@@ -1,18 +1,24 @@
 "use client";
 
-import { useState } from "react";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
+import { useState, ChangeEvent, FormEvent } from "react";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+interface FormData {
+    name: string;
+    email: string;
+    message: string;
+}
 
 export default function Contact() {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
         message: "",
     });
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
             ...prevData,
@@ -20,7 +26,7 @@ export default function Contact() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         alert("Message sent successfully!");
         setFormData({ name: "", email: "", message: "" });
@@ -110,7 +116,7 @@ export default function Contact() {
                             value={formData.message}
                             onChange={handleInputChange}
                             required
-                            rows="4"
+                            rows={4}
                             className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         ></textarea>
                     </div>

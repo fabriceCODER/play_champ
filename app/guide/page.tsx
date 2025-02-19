@@ -1,11 +1,22 @@
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import Link from "next/link";
-import CTA from "@/app/components/CTA";
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import CTA from "../components/CTA";
+
+interface Guide {
+    id: number;
+    title: string;
+    description: string;
+    link: string;
+}
+
+interface GuideCardProps {
+    guide: Guide;
+}
 
 export default function Guide() {
-    const guides = useMemo(() => [
+    const guides: Guide[] = useMemo(() => [
         {
             id: 1,
             title: "Getting Started with Our Platform",
@@ -54,7 +65,7 @@ export default function Guide() {
     );
 }
 
-const GuideCard = ({ guide }) => (
+const GuideCard: React.FC<GuideCardProps> = ({ guide }) => (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden p-6">
         <h3 className="text-xl font-bold">{guide.title}</h3>
         <p className="text-gray-600 dark:text-gray-400 mb-4">{guide.description}</p>

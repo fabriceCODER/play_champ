@@ -1,11 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
 import { FaChevronDown } from "react-icons/fa";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-const faqs = [
+interface FAQItem {
+    question: string;
+    answer: string;
+}
+
+const faqs: FAQItem[] = [
     {
         question: "What is PlayChamp?",
         answer: "PlayChamp is a platform for discovering and playing the best play-to-earn games, offering a seamless gaming experience."
@@ -29,9 +34,9 @@ const faqs = [
 ];
 
 export default function FAQ() {
-    const [openIndex, setOpenIndex] = useState(null);
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-    const toggleFAQ = (index) => {
+    const toggleFAQ = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
     };
 

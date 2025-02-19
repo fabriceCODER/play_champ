@@ -1,10 +1,10 @@
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import DashboardLayout from "../layouts/DashboardLayout";
-import { useGames } from "@/hooks/useGames";
+import { useGames } from "../../hooks/useGames";
 
-const Dashboard = () => {
+const Dashboard: React.FC = () => {
     const { isSignedIn } = useUser();
     const router = useRouter();
     const { data, isLoading } = useGames();
