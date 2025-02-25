@@ -1,12 +1,12 @@
-import "./styles/globals.css";
+import "./styles/globals.css"
 import { ClerkProvider, SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import ThemeToggle from "./components/ThemeToggle";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import TrendingGames from "./components/TrendingGames";
-import FeaturedProjects from "./components/FeaturedProjects";
-import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import CTA from "./components/CTA";
+import FeaturedProjects from "./components/FeaturedProjects";
+import TrendingGames from "./components/TrendingGames";
+import Hero from "./components/Hero";
+import Header from "./components/Header";
+import ThemeToggle from "./components/ThemeToggle";
 
 
 export default function Home() {

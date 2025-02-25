@@ -4,7 +4,7 @@ export default function LearnMoreSection() {
             <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold mb-4">Discover More</h2>
                 <p className="mb-8">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Explore our
+                    Explore our
                     portfolio and understand the essence of play-to-earn gaming.
                 </p>
                 <button className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition">

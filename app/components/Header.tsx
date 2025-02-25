@@ -52,7 +52,7 @@ export default function Header() {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex space-x-8">
-                    {["Home", "About us", "Pricing", "News"].map((item, index) => {
+                    {["Home", "About", "Pricing", "News"].map((item, index) => {
                         const path = `/${item.toLowerCase().replace(/\s+/g, "-")}`;
                         return (
                             <button

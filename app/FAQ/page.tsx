@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import {JSX, useState} from "react";
 import { FaChevronDown } from "react-icons/fa";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -33,10 +33,10 @@ const faqs: FAQItem[] = [
     }
 ];
 
-export default function FAQ() {
+export default function FAQ(): JSX.Element {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-    const toggleFAQ = (index: number) => {
+    const toggleFAQ = (index: number): void => {
         setOpenIndex(openIndex === index ? null : index);
     };
 

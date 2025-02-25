@@ -1,6 +1,7 @@
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import React from "react";
 
-export default function Hero() {
+const Hero: React.FC = () => {
     return (
         <section className="bg-white dark:bg-secondary py-20 px-6 relative">
             <div className="container mx-auto flex flex-col lg:flex-row items-center gap-10">
@@ -51,4 +52,6 @@ export default function Hero() {
             </div>
         </section>
     );
-}
+};
+
+export default Hero;
