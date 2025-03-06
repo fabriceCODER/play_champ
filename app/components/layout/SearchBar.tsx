@@ -1,9 +1,13 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-const SearchBar = ({ onSearch }) => {
-    const [query, setQuery] = useState("");
+interface SearchBarProps {
+    onSearch: (query: string) => void; // Define the expected type for onSearch
+}
 
-    const handleSearch = (e) => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+    const [query, setQuery] = useState<string>("");
+
+    const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
         onSearch(query);
     };

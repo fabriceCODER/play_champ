@@ -1,3 +1,4 @@
+"use client"
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
@@ -11,7 +12,7 @@ const Dashboard: React.FC = () => {
 
     useEffect(() => {
         if (!isSignedIn) {
-            router.push("/sign-in");
+            router.push("/sign-in").then(r => console.log("Page not Found"));
         }
     }, [isSignedIn, router]);
 
