@@ -1,6 +1,6 @@
-"use client"; // ✅ This makes it a Client Component
+"use client"; // Make sure this file is treated as a client component
 
-import { useRouter } from "next/navigation"; // ✅ Correct import for App Router
+import { useRouter } from "next/navigation";
 import { useGames } from "../../../hooks/useGames";
 import DashboardLayout from "../../layouts/DashboardLayout";
 import { useState } from "react";
@@ -12,8 +12,7 @@ const GamePlayground = () => {
     const { data } = useGames("");
     const [mode, setMode] = useState("online");
 
-    // Get game ID from query (Next.js App Router does not support query directly)
-    const id = "some_game_id"; // You need to get this from context or props
+    const id = "some_game_id"; // Example, you need to fetch this properly
 
     const game = data?.games.find((g: { id: string | undefined }) => g.id === id);
 
@@ -21,9 +20,7 @@ const GamePlayground = () => {
 
     return (
         <DashboardLayout>
-            {/* ✅ Search Bar */}
             <SearchBar onSearch={(query) => console.log("Searching for:", query)} />
-
             <h2 className="text-xl font-semibold">{game.title} 🎮</h2>
             <p className="text-gray-600">{game.description}</p>
 
