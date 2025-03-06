@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, lazy, Suspense } from "react";
+import { memo, lazy, Suspense, ReactNode } from "react";
 import Link from "next/link";
 
 // Lazy-load social media icons
@@ -9,11 +9,17 @@ const FaTwitter = lazy(() => import("react-icons/fa").then((m) => ({ default: m.
 const FaInstagram = lazy(() => import("react-icons/fa").then((m) => ({ default: m.FaInstagram })));
 const FaLinkedin = lazy(() => import("react-icons/fa").then((m) => ({ default: m.FaLinkedin })));
 
-const IconWrapper = ({ children }) => (
+// Define props for IconWrapper
+interface IconWrapperProps {
+    children: ReactNode;
+}
+
+// Wrapper for lazy-loaded icons
+const IconWrapper: React.FC<IconWrapperProps> = ({ children }) => (
     <Suspense fallback={<span className="animate-pulse">Loading...</span>}>{children}</Suspense>
 );
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
         <footer className="bg-gray-900 text-gray-300 py-8">
             <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
@@ -56,6 +62,7 @@ const Footer = () => {
                     </p>
                     <p className="mt-2 text-sm">Email: support@playchamp.com</p>
                     <p className="mt-2 text-sm">Phone: +1 (800) 123-4567</p>
+
                     {/* Social Media Links */}
                     <div className="flex space-x-4 mt-4">
                         <a href="https://facebook.com/playchamp" target="_blank" rel="noopener noreferrer" className="hover:text-white">
