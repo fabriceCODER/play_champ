@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
 
                         {/* Show Dashboard button for signed-in users */}
                         <SignedIn>
-                            <a href="/dashboard" className="bg-primary text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-800 flex items-center gap-2">
+                            <a href="/dashboard/play" className="bg-primary text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-800 flex items-center gap-2">
                                 <span>Play Games</span>
                             </a>
                         </SignedIn>
