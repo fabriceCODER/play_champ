@@ -33,13 +33,13 @@ export default function Contact() {
     };
 
     return (
-        <main className="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+        <main className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen">
             <Header />
 
             {/* Page Title */}
             <section className="py-16 text-center">
-                <h1 className="text-4xl font-bold">Contact Us</h1>
-                <p className="text-gray-700 dark:text-gray-300 mt-2">
+                <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100">Contact Us</h1>
+                <p className="text-gray-600 dark:text-gray-300 mt-2">
                     Reach out to us for inquiries, feedback, or support.
                 </p>
             </section>
@@ -48,24 +48,22 @@ export default function Contact() {
             <section className="container mx-auto px-6 grid md:grid-cols-2 gap-12 pb-16">
                 {/* Contact Info */}
                 <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
-                    <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-                    <p className="text-gray-700 dark:text-gray-300 mb-6">
+                    <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Get in Touch</h2>
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">
                         We’d love to hear from you! Feel free to contact us anytime.
                     </p>
                     <div className="space-y-4">
                         <div className="flex items-center space-x-3">
                             <FaEnvelope className="text-blue-500 text-lg" />
-                            <span className="text-gray-900 dark:text-gray-100">
-                                contact@playchamp.com
-                            </span>
+                            <span className="text-gray-800 dark:text-gray-100">contact@playchamp.com</span>
                         </div>
                         <div className="flex items-center space-x-3">
                             <FaPhone className="text-blue-500 text-lg" />
-                            <span className="text-gray-900 dark:text-gray-100">+250 794 500 945</span>
+                            <span className="text-gray-800 dark:text-gray-100">+250 794 500 945</span>
                         </div>
                         <div className="flex items-center space-x-3">
                             <FaMapMarkerAlt className="text-blue-500 text-lg" />
-                            <span className="text-gray-900 dark:text-gray-100">
+                            <span className="text-gray-800 dark:text-gray-100">
                                 123 PlayChamp Street, Gaming City
                             </span>
                         </div>
@@ -77,7 +75,7 @@ export default function Contact() {
                     onSubmit={handleSubmit}
                     className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
                 >
-                    <h2 className="text-2xl font-semibold mb-4">Send a Message</h2>
+                    <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Send a Message</h2>
                     <div className="mb-4">
                         <label className="block text-sm font-medium text-gray-800 dark:text-gray-200" htmlFor="name">
                             Name
@@ -89,7 +87,7 @@ export default function Contact() {
                             value={formData.name}
                             onChange={handleInputChange}
                             required
-                            className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                     </div>
                     <div className="mb-4">
@@ -103,7 +101,7 @@ export default function Contact() {
                             value={formData.email}
                             onChange={handleInputChange}
                             required
-                            className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                     </div>
                     <div className="mb-4">
@@ -117,7 +115,7 @@ export default function Contact() {
                             onChange={handleInputChange}
                             required
                             rows={4}
-                            className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         ></textarea>
                     </div>
                     <button
