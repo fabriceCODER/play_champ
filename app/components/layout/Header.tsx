@@ -1,30 +1,25 @@
 "use client";
 
-import { useState, useCallback, useEffect, useMemo } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Sun, Moon, Menu, X } from "lucide-react";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 export default function Header() {
-    const [darkMode, setDarkMode] = useState(() => {
-        if (typeof window !== "undefined") {
-            return localStorage.getItem("theme") === "dark";
-        }
-        return false;
-    });
-
+    const [darkMode, setDarkMode] = useState<boolean | null>(null); // Start as null to avoid SSR mismatch
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const router = useRouter();
 
-    // Sync dark mode with localStorage
+    // Sync dark mode with localStorage on mount
     useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add("dark");
-            localStorage.setItem("theme", "dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-            localStorage.setItem("theme", "light");
-        }
+        const storedTheme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        setDarkMode(storedTheme === "dark");
+    }, []);
+
+    useEffect(() => {
+        if (darkMode === null) return; // Prevent execution until state is initialized
+        document.documentElement.classList.toggle("dark", darkMode);
+        localStorage.setItem("theme", darkMode ? "dark" : "light");
     }, [darkMode]);
 
     const toggleDarkMode = useCallback(() => {
@@ -39,10 +34,10 @@ export default function Header() {
         router.push(path);
     };
 
-    const ThemeIcon = useMemo(
-        () => (darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />),
-        [darkMode]
-    );
+    // Avoid hydration mismatch by rendering nothing until darkMode is set
+    if (darkMode === null) {
+        return null;
+    }
 
     return (
         <header className="bg-background dark:bg-darkBackground text-white dark:text-white py-4 px-6 shadow-md">
@@ -87,7 +82,7 @@ export default function Header() {
                         onClick={toggleDarkMode}
                         className="bg-gray-200 dark:bg-gray-800 text-primary dark:text-white p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition duration-300"
                     >
-                        {ThemeIcon}
+                        {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
                     </button>
 
                     {/* Mobile Menu Toggle */}
