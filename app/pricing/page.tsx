@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import CTA from "../components/CTA";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 
 interface PricingPlan {
     id: number;

@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import { useGames } from "../../hooks/useGames"
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/layout/SearchBar";
 
 interface Game {
     id: number;

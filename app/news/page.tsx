@@ -1,10 +1,10 @@
 "use client";
 
-import Header from "../components/Header";
+import Header from "../components/layout/Header";
 import {JSX} from "react";
 import NewsGrid from "../components/news/NewsGrid";
 import CTA from "../components/CTA";
-import Footer from "../components/Footer";
+import Footer from "../components/layout/Footer";
 
 export default function NewsPage(): JSX.Element {
     return (

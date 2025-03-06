@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useGames } from "@/hooks/useGames";
+import { useGames } from "../../../hooks/useGames";
 import DashboardLayout from "../../layouts/DashboardLayout";
 import { useState } from "react";
 
@@ -7,7 +7,7 @@ const GamePlayground = () => {
     const router = useRouter();
     const { id } = router.query;
     const { data } = useGames("");
-    const game = data?.games.find((g) => g.id === id);
+    const game = data?.games.find((g: { id: string | string[] | undefined; }) => g.id === id);
 
     const [mode, setMode] = useState("online");
 

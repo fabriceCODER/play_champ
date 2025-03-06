@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import LearnMoreSection from "../../app/components/LearnMore";
+import LearnMoreSection from "./layout/LearnMore";
 
 export default function TrendingGames() {
     const games = [
