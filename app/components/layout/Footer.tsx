@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, lazy, Suspense, ReactNode } from "react";
+import React, { memo, lazy, Suspense, ReactNode } from "react";
 import Link from "next/link";
 
 // Lazy-load social media icons
